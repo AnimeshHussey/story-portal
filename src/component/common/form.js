@@ -30,7 +30,6 @@ const FormNewStory = () => {
     } catch (error) {
       console.log(error);
     }
-    postStory();
   };
 
   return (
