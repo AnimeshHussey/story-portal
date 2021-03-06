@@ -10,11 +10,11 @@ function ModalCreateStory({ open, setOpen }) {
       onOpen={() => setOpen(true)}
       open={open}
       size="small"
-      trigger={<Button>Basic Modal</Button>}
+      trigger={<Button>Create Story</Button>}
     >
       <Header>Create Story</Header>
       <Modal.Content>
-        <FormNewStory />
+        <FormNewStory setOpen={setOpen} />
       </Modal.Content>
       <Modal.Actions>
         <Button basic color="red" inverted onClick={() => setOpen(false)}>
