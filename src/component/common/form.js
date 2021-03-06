@@ -10,12 +10,26 @@ const FormNewStory = () => {
   const [assgnTo, setassgnTo] = useState("");
 
   const stateOptions = [
-    { key: "CLOSED", text: "CLOSED", value: "CLOSED" },
+    // { key: "CLOSED", text: "CLOSED", value: "CLOSED" },
     { key: "STARTED", text: "STARTED", value: "STARTED" },
-    { key: "IN-PROGRESS", text: "IN-PROGRESS", value: "IN-PROGRESS" },
-    { key: "DEFFERED", text: "DEFFERED", value: "DEFFERED" },
+    // { key: "IN-PROGRESS", text: "IN-PROGRESS", value: "IN-PROGRESS" },
+    // { key: "DEFFERED", text: "DEFFERED", value: "DEFFERED" },
   ];
-  const createStory = () => {
+  const createStory = async () => {
+    try {
+      let storyData = {
+        description: desc,
+        storypoint: point,
+        status: "STARTED",
+        assignedTo: assgnTo,
+      };
+      const newStory = await postStory(storyData);
+      if (newStory.postCreated) {
+        console.log("Story Created", newStory._id);
+      }
+    } catch (error) {
+      console.log(error);
+    }
     postStory();
   };
 
