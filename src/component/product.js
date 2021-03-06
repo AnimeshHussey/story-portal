@@ -7,7 +7,6 @@ const Products = () => {
   return (
     <>
       <div>
-        {/* <button class="ui button">Create Story</button> */}
         <ModalExampleBasic open={open} setOpen={setOpen} />
       </div>
       <div
